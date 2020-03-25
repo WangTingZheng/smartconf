@@ -1,10 +1,13 @@
 package com.wangtingzheng.smartconf.file;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-
 import java.io.*;
 
+/**
+ * @date 2020-3-35
+ * @author 14037
+ * @feature convert file JSONObject String
+ */
 public class InformationConverter {
     public JSONObject fileToJson(String path)
     {
@@ -18,9 +21,11 @@ public class InformationConverter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        text = text.replace("null", "");
-        return JSONObject.parseObject(text.toString());
+        if(text != null)
+        {
+            text = text.replace("null", "");
+        }
+        return JSONObject.parseObject(text);
     }
 
     public void stringToFile(String text, String path)

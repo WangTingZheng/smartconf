@@ -2,6 +2,11 @@ package com.wangtingzheng.smartconf.utils;
 
 import java.util.*;
 
+/**
+ * @date 2020-3-25
+ * @author 14037
+ * @feature define a wifi information object
+ */
 public class WifiList {
 
 
@@ -25,7 +30,6 @@ public class WifiList {
         wifilist.add(wifiMap);
     }
 
-
     public List<Map<String, String>> getWifilist() {
         return wifilist;
     }
@@ -34,6 +38,11 @@ public class WifiList {
         this.wifilist = wifilist;
     }
 
+    /**
+     * convert wifi list to string
+     * @param isformat Do add \n
+     * @return a json format String
+     */
     public String listToString(boolean isformat)
     {
         String res = isformat?"{\n":"{";
@@ -45,7 +54,7 @@ public class WifiList {
             Set<String> set;
             int setSize;
             Iterator<String> iterator;
-            String item = null;
+            String item;
 
 
             res += ("\"" + num + "\"" + ":{" + (isformat?"\n":""));
